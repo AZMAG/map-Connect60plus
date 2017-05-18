@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=8,chrome=1">
+    <title>Connect 60+|Map</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="description" content="Human Resources Map for Connect60Plus website">
+    <meta name="keywords" content="Aging, Aging in Place, Connect 60 Plus, MAG, Maricopa County, Arizona, Human Services, Places of Interest">
+    <meta name="generator" content="Sublime Text2">
+    <meta name="author" content="Wolfley">
+    <meta name="contact" content="www.azmag.gov">
+    <meta name="date" type="creation-date" content="04/15/2013">
+    <meta name="date" type="revision-date" content="06/20/2013">
+    <meta name="version" content="2.5.0">
+    <!-- Fav and touch icons -->
+    <link rel="apple-touch-icon" type="image/png" sizes="144x144" href="img/magicon_144.png">
+    <link rel="apple-touch-icon" type="image/png" sizes="114x114" href="img/magicon_114.png">
+    <link rel="apple-touch-icon" type="image/png" sizes="72x72" href="img/magicon_72.png">
+    <link rel="apple-touch-icon" type="image/png" sizes="57x57" href="img/magicon_57.png">
+    <link rel="shortcut icon" type="image/png" href="img/magfavicon.png">
+    <!-- css stylesheets used to customize the UI of the application -->
+    <link rel="stylesheet" type="text/css" href="https://ajax.googleapis.com/ajax/libs/dojo/1.9.0/dijit/themes/claro/claro.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/jquery-ui.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/layout.min.css">
+<!-- ============================================================================================================== -->
+<!-- Google Maps API v3.12 -->
+  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3.12&amp;key=AIzaSyCbXeI8vbZa25hskM4c7Cg9u2EmfFApylU&amp;libraries=places&amp;sensor=true"></script>
+<!-- ============================================================================================================== -->
+<!--IE fix for HTML5 Elements -->
+  <script type="text/javascript">document.createElement('footer');</script>
+</head>
+<body>
+<div data-dojo-type="dijit/layout/BorderContainer" id="borderContainer">
+
+    <!-- Navbar main-->
+    <div id="navbar-main" class="navbar" data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region:'top'">
+        <div>
+          <!--<a id="title" class="brand">Human Services</a>-->
+          <a id="poiTab" class="nav" role="button" title="Legend">Points of Interest</a>
+          <a id="addressTab" class="nav" role="button" title="Address">Address</a>
+          <a id="directionTab" class="nav" role="button" title="Directions">Directions</a>
+          <a id="infoTab" class="nav" role="button" title="Info/Help">Info/Help</a>
+        </div>
+    </div><!--/Navbar main-->
+
+<!--Map Area-->
+<div id="mapContainer" data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region:'center'">
+
+  <div id="map-canvas" class="print" data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region:'center'"></div>
+
+    <!-- legend dropdown -->
+    <div id="poi" class="content" data-role="content">
+      <span id="close1" role="button" onclick="toggleLeg()"><img class="x" alt="close button" src="img/close-button.png"></span>
+      <p>Click checkbox to turn icons on/off</p><hr>
+      <div id="legend" class="legend">
+      <ul>
+        <li><input type="checkbox" id="layer0" onclick="toggleLayer(0)" checked> Entertainment
+          <ul>
+            <li><img class="pics" alt="Amusement Parks" src="img/Layer5.png">Amusement Parks</li>
+            <li><img class="pics" alt="Casinos" src="img/Layer6.png">Casinos</li>
+            <li><img class="pics" alt="Movie Theaters" src="img/Layer8.png">Movie Theaters</li>
+            <li><img class="pics" alt="Museums" src="img/Layer9.png">Museums</li>
+            <li><img class="pics" alt="Performing Arts" src="img/Layer10.png">Performing Arts</li>
+            <li><img class="pics" alt="Zoos" src="img/Layer11.png">Zoos</li>
+          </ul>
+        </li>
+        <li><input type="checkbox" id="layer1" onclick="toggleLayer(1)" checked> Activities
+          <ul>
+            <li><img class="pics" alt="Gardens" src="img/Layer7.png">Gardens</li>
+            <li><img class="pics" alt="Library" src="img/Layer22.png">Library</li>
+            <li><img class="pics" alt="Phoenix Point of Pride" src="img/Layer15.png">Phoenix Point of Pride</li>
+            <li><img class="pics" alt="Dog Parks" src="img/Layer40.png">Dog Parks</li>
+          </ul>
+        </li>
+        <li><input type="checkbox" id="layer2" onclick="toggleLayer(2)" checked> Sports Facilities
+          <ul>
+            <li><img class="pics" alt="Aquatic Center" src="img/Layer29.png">Aquatic Center</li>
+            <li><img class="pics" alt="Bowling Alley" src="img/Layer30.png">Bowling Alley</li>
+            <li><img class="pics" alt="Golf Course" src="img/Layer31.png">Golf Course</li>
+            <li><img class="pics" alt="Race Track" src="img/Layer32.png">Race Track</li>
+            <li><img class="pics" alt="Shooting Range" src="img/Layer33.png">Shooting Range</li>
+            <li><img class="pics" alt="Stadium/Arena" src="img/Layer34.png">Stadium/Arena</li>
+          </ul>
+        </li>
+        <li><input type="checkbox" id="layer3" onclick="toggleLayer(3)" checked> Visitor Services
+          <ul>
+            <li><img class="pics" alt="Airports" src="img/Layer17.png">Airports</li>
+            <li><img class="pics" alt="Convention Center" src="img/Layer36.png">Convention Center</li>
+            <li><img class="pics" alt="Hotels-Motels-Resorts" src="img/Layer37.png">Hotels-Motels-Resorts</li>
+            <li><img class="pics" alt="Visitor Center" src="img/Layer38.png">Visitor Center</li>
+          </ul>
+        </li>
+        <li><input type="checkbox" id="layer4" onclick="toggleLayer(4)" checked> Education
+          <ul>
+            <li><img class="pics" alt="Public College/University" src="img/Layer2.png">Public College/University</li> 
+          </ul>
+        </li>
+        <li><input type="checkbox" id="layer5" onclick="toggleLayer(5)" checked> Government Services
+          <ul>
+            <li><img class="pics" alt="City Hall" src="img/Layer19.png">City Hall</li>
+            <li><img class="pics" alt="Courts" src="img/Layer21.png">Courts</li>
+            <li><img class="pics" alt="Community &amp; Senior Centers" src="img/Layer20.png">Community &amp; Senior Centers</li>
+            <li><img class="pics" alt="Post Office" src="img/Layer23.png">Post Office</li>
+            <li><img class="pics" alt="Foreign Consulates" src="img/Layer13.png">Foreign Consulates</li>
+            <li><img class="pics" alt="Military Facilities" src="img/Layer14.png">Military Facilities</li>
+          </ul>
+        </li>
+        <li><input type="checkbox" id="layer6" onclick="toggleLayer(6)" checked> Public Safety
+          <ul>
+            <li><img class="pics" alt="Fire Station" src="img/Layer25.png">Fire Station</li>
+            <li><img class="pics" alt="Police Station" src="img/Layer27.png">Police Station</li>
+            <li><img class="pics" alt="Hospital/Medical Center" src="img/Layer26.png">Hospital/Medical Center</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    </div><!-- /legend dropdown -->   
+
+    <!-- address dropdown -->
+    <div id="findAddress" class="content" data-role="content">
+      <span id="close2" role="button" onclick="toggleAddress()"><img class="x" alt="close button" src="img/close-button.png"></span>
+        <p>Enter address formatted like - 302 N 1st Ave, Phoenix</p>
+        <div id="addPanel">
+          <input id="address" class="address" type="text" name="search address field" title="Enter Address" value="" onclick="this.value='';"/>
+          <input id="addButton" type="button" title="Search" value="Search" onclick="codeAddress()"/>
+        </div><!--/addPanel-->
+    </div><!-- /address dropdown -->
+
+    <!-- directions dropdown -->
+    <div id="directions" class="content" data-role="content">
+      <span id="close3" role="button" onclick="toggleDirections()"><img class="x" alt="close button" src="img/close-button.png"></span>
+        <p>Enter address formatted like - 302 N 1st Ave, Phoenix</p>
+          <div id="side-container">
+            <ul>
+            <li class="dir-label">From:</li>
+            <li><input id="fromAddress" class="address" type=text name="fromAddress" title="Start Address" value="" onclick="this.value='';"/></li>
+            <br clear="both"/>
+            <li class="dir-label">To:</li>
+            <li><input id="toAddress" class="address" type=text name="toAddress" title="End Address" value="" onclick="this.value='';"/></li>
+            </ul>
+          <div>
+            <br clear="both"/>
+            <select id="travel-mode-input" title="Travel Mode" onchange="getDirections()">
+              <option value="driving" selected="selected">By car</option>
+              <option value="transit">By public transit</option>
+              <option value="bicycling">Bicycling</option>
+              <option value="walking">Walking</option>
+            </select>
+           <!--  <select id="unit-input" title="Measurment Type" onchange="getDirections();"/>
+              <option value="imperial" selected="selected">Imperial</option>
+              <option value="metric">Metric</option>
+            </select> -->
+            <input type="button" title="Get Directions" value="Get Directions" onclick="getDirections()"/>
+            <input type="button" title="Clear Direction" value="Clear Directions" onclick="clearAll()"/>
+           <!-- <a id="printMap" href="#" role="button" title="Print Map" target="_blank" onClick="print()"><button>Print Directions</button></a> -->
+
+           <a id="printMap" class="printButton" name="printMap" href="javascript:void(0)" role="button" title="Print Directions" target="_blank" onClick="print()">Print Directions</a>
+
+          </div>
+            <div id="dir-container" class="print"></div>
+          </div> <!--/side-container-->
+    </div><!-- /directions dropdown -->
+
+    <!-- info dropdown -->
+    <div id="info" class="content" data-role="content">
+      <span id="close4" role="button" onclick="toggleInfo()"><img class="x" alt="close button" src="img/close-button.png"></span>
+        <h2>Aging in Place Map</h2>
+        <h3> Information on navigating around this map</h3><hr>
+        <ul>
+          <li><b>Map </b>- The map area will show a geographical location with corresponding search results and other information</li>
+
+          <li><b>Layers </b>- Hover over the widget in the righthand corner of the map to view available layers for your location</li>
+
+          <li><b>Info Window </b>- When you click on a marker in the map an info window will appear that displays additional information about that particular place.</li>
+
+          <li><b>Street View </b>- Drag the yellow pegman on the map's zoom controls to a location on the map to view and navigate street-level imagery</li>
+
+          <li><b>Points of Interest </b>- Points of Interest tab identifies types markers on the map.</li>
+
+          <li><b>Address </b>- Search for a location on the map by entering an address in the search box in the Address tab.</li>
+
+          <li><b>Directions </b>- Get directions by entering a starting and ending location in the Directions tab, and click <b>Get Directions</b>.  Directions appear on the map as a blue line.  Waypoints are specified by green (start) and red (end) markers.  You can drag any of the markers on the map to change directions on the fly.  You can also change the type of directions by changing the travel mode drop down box.  Click on suggested routes to see alternitive route directions.  Use the <b>Clear Directions</b> button to clear the map and start over.</li>
+
+          
+
+          <li><b>Report a problem </b>- Help to make Google Maps better by reporting data or product issues by clicking on "Report a map error" on the bottom of the map.</li>
+        </ul>
+          <address>For more information on using Google Maps please visit - <a class="link" title="Google Support" target="_blank" href="https://support.google.com/maps/bin/answer.py?hl=en&amp;answer=144349&amp;topic=1687350&amp;ctx=topic">Google Support</a></address>
+        <hr>
+
+        <p class="legal">Please note that while every effort has been made to ensure the accuracy of this information, the Maricopa Association of Governments makes no warranty, express or implied, as to its accuracy and expressly disclaims liability for the accuracy thereof.</p>
+        <p class="legal">Data Source: MAG Building Landmark Inventory 2012</P>
+
+        <address>Vist us at our Website: <a id="mag" class="link" title="MAG website" target="_blank" href="https://www.azmag.gov">www.azmag.gov</a></address>
+        <address>Have a question or comment about this site? Contact us @ <a id="email" class="link" title="Email Team" onclick="openemailwin()">MAG GIS Team</a></address>
+        <footer class="footer" role="contentinfo"><img id="magLogo" alt="MAG Logo" src="img/maglogo.png"></footer>
+    </div><!-- /info dropdown -->
+
+</div><!--/Map Area-->
+</div><!-- /BorderContainer -->
+
+<!-- *** javascript *** -->
+<!-- =================================================================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+  <script>dojoConfig = {parseOnLoad: true}</script>
+  <script src="//ajax.googleapis.com/ajax/libs/dojo/1.9.0/dojo/dojo.js"></script>
+  <script>require(["dojo/parser", "dijit/layout/ContentPane", "dijit/layout/BorderContainer"]);</script>
+  <script src="js/jquery-1.9.1.min.js"></script>
+  <script src="js/jquery-ui.js"></script>
+  <!-- document javascript -->
+  <script src="js/config.js"></script>
+  <script src="js/main.min.js"></script>
+  <script src="js/keydragzoom_packed.js"></script>
+  <!-- Google Analytics -->
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-41848827-1', 'azmag.gov');
+    ga('send', 'pageview');
+  </script>
+</body>
+</html>
