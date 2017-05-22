@@ -3,19 +3,16 @@
   "version": "2.5.0",
   "date": "06/20/2013",
   "description": "Connect60plus Interactive Map",
-  "keywords": ["Aging","Aging in Place","Connect 60 Plus","Human Services","Places of Interest","Maricopa","County","Arizona","AZ", "MAG", "maps", "ESRI", "#MAGmaps"],
+  "keywords": ["Aging", "Aging in Place", "Connect 60 Plus", "Human Services", "Places of Interest", "Maricopa", "County", "Arizona", "AZ", "MAG", "maps", "ESRI", "#MAGmaps"],
   "main": "index.js",
   "homepage": "https://www.connect60plus.com/",
   "author": "Vern Wolfley <vwolfley@azmag.gov>",
   "contributors": [{
     "name": "Vern Wolfley",
     "email": "vwolfley@azmag.gov"
-  }, {
-    "name": "Jack Fairfield",
-    "email": "jfairfield@azmag.gov"
   }],
   "private": true,
-"dependencies": {
+  "dependencies": {
 
   },
   "devDependencies": {

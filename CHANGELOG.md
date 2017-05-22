@@ -1,5 +1,6 @@
 # CHANGELOG #
 ### Connect60plus Interactive Map ###
+Documentation for Human Services Map for Connect60plus - Aging in Place
 
 [![Semver](http://img.shields.io/SemVer/2.0.0.png)](http://semver.org/spec/v2.0.0.html)
 
@@ -51,4 +52,33 @@ And constructed with the following guidelines:
 ## 1.0.0 | 04/15/2013
 
 * Google Map Javascript API 3.11
+============================================================================
+*** REFERENCE ***
+http://help.arcgis.com/en/webapi/javascript/gmaps/help/topics/apiref.htm
+http://help.arcgis.com/en/webapi/javascript/gmaps/index.html
+https://developers.google.com/maps/documentation/javascript/
+http://plebeosaur.us/etc/map/
+https://developers.google.com/maps/documentation/javascript/geocoding#ReverseGeocoding
+http://gmaps-samples-v3.googlecode.com/svn/trunk/geolocate/geolocate.html    //reverse Geocoding example
+http://srobbin.com/jquery-plugins/pageslide/    //page slide example
+http://maps.forum.nu/v3/gm_directions.html      //good example of google map
 
+http://google-maps-utility-library-v3.googlecode.com/svn/trunk/infobox/docs/examples.html //infobox replacement for infowindow
+
+http://code.google.com/p/google-maps-utility-library-v3/wiki/Libraries
+
+http://www.geocodezip.com/    //Google Maps API v3 examples
+http://econym.org.uk/gmap/
+
+http://blog.michaelhelmick.com/2011/04/23/google-maps-api-multiple-markers-multiple-infowindowsinfobubbles/
+
+===================================================================================
+EXAMPLES OF GOOD GOOGLE MAPS
+===================================================================================
+http://efwjames.com/tcrd/
+http://gis.mda.state.mn.us/maps/source_water.htm
+http://mappedinny.com/
+http://google-maps-utility-library-v3.googlecode.com/svn/trunk/markerclusterer/docs/examples.html
+http://www.wingo.com/gmaps/examples.html
+http://www.mapsmaniac.com/
+http://www.powerhour.at/devblog/print-route-from-google-maps-api/

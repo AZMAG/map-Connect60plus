@@ -10,26 +10,24 @@ module.exports = function(grunt) {
 
         bannercss:  '/*! ========================================================================\n' +
                     ' * Maricopa Association of Governments\n' +
-                    ' * CSS files for MAG Wickenburg Zoning Map Viewer\n' +
+                    ' * CSS files for MAG Connect60plus Map\n' +
                     ' * @concat.min.css | version | <%= pkg.version %>\n' +
                     ' * Production | <%= pkg.date %>\n' +
-                    ' * http://geo.azmag.gov/maps/wickenburg/\n' +
-                    ' * MAG Bikeways Viewer\n' +
+                    ' * https://www.connect60plus.com/\n' +
                     ' * ==========================================================================\n' +
-                    ' * Copyright 2016 MAG\n' +
-                    ' * Licensed under MIT\n' +
+                    ' * @copyright 2017 MAG\n' +
+                    ' * @license MIT\n' +
                     ' * ========================================================================== */\n',
 
         bannerjs:  '/*! ========================================================================\n' +
                     ' * Maricopa Association of Governments\n' +
-                    ' * JavaScript files for MAG Wickenburg Zoning Map Viewer\n' +
+                    ' * JavaScript files for MAG Connect60plus Map\n' +
                     ' * @main.min.js | version | <%= pkg.version %>\n' +
                     ' * Production | <%= pkg.date %>\n' +
-                    ' * http://geo.azmag.gov/maps/wickenburg/\n' +
-                    ' * MAG Wickenburg Zoning Map Viewer\n' +
+                    ' * https://www.connect60plus.com/\n' +
                     ' * ==========================================================================\n' +
-                    ' * Copyright 2016 MAG\n' +
-                    ' * Licensed under MIT\n' +
+                    ' * @copyright 2017 MAG\n' +
+                    ' * @license MIT\n' +
                     ' * ========================================================================== */\n',
 
         jshint: {
