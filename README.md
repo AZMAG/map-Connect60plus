@@ -3,6 +3,7 @@
 # Connect60plus Map #
 MAG mapping application for the Connect60plus website
 
+[![GitHub version](https://badge.fury.io/gh/AZMAG%2Fmap-Connect60plus.svg)](https://badge.fury.io/gh/AZMAG%2Fmap-Connect60plus)
 [![GitHub issues](https://img.shields.io/github/issues/AZMAG/map-Connect60plus.svg)](https://github.com/AZMAG/map-Connect60plus/issues)
 [![dependencies](https://david-dm.org/AZMAG/map-Connect60plus.png)](https://david-dm.org/AZMAG/map-Connect60plus)
 [![devDependency Status](https://david-dm.org/AZMAG/map-Connect60plus/dev-status.png)](https://david-dm.org/AZMAG/map-Connect60plus)
