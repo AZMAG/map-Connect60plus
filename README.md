@@ -7,7 +7,7 @@ MAG mapping application for the Connect60plus website
 [![dependencies](https://david-dm.org/AZMAG/map-Connect60plus.png)](https://david-dm.org/AZMAG/map-Connect60plus)
 [![devDependency Status](https://david-dm.org/AZMAG/map-Connect60plus/dev-status.png)](https://david-dm.org/AZMAG/map-Connect60plus)
 [![Semver](http://img.shields.io/SemVer/2.0.0.png)](http://semver.org/spec/v2.0.0.html)
-[![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/)
+[![Built with Grunt](http://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/)
 [![MIT licensed](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
 ****************************************************************************************
